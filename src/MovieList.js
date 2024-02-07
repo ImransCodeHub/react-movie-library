@@ -6,15 +6,28 @@ object will loop through each of the movies and display a “Movie” component.
 
 import React from 'react';
 import Movie from './Movie';
+import { Card } from 'react-bootstrap';
 
 const MovieList = (props) => {
-  return (
-    <div>
-      {props.movies.map((movie, index) => (
-        <Movie key={index} movie={movie} />
-      ))}
-    </div>
-  );
-};
+    return (
+        <Card>
+        <Card.Body>
+            {props.movies.map((movie, index) => (
+            <Movie key={index} movie={movie} />
+            ))}
+        </Card.Body>
+        </Card>
+    );
+    };
+    
+// const MovieList = (props) => {
+//   return (
+//     <div>
+//       {props.movies.map((movie, index) => (
+//         <Movie key={index} movie={movie} />
+//       ))}
+//     </div>
+//   );
+// };
 
 export default MovieList;
