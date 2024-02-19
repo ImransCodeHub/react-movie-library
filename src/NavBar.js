@@ -16,6 +16,10 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-light bg-light">
             <div className="container">
+                <a className="navbar-brand" href='/' >Movie Reviews</a>
+                &nbsp;&nbsp;&nbsp;
+                <a className="navbar-brand" href='/'>Submit Review</a>
+                &nbsp;&nbsp;&nbsp;
                 <a className="navbar-brand" href="/">Assignment 3</a>
                 <Button
                     onClick={handleButtonClick}
