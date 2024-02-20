@@ -6,12 +6,15 @@ object will loop through each of the movies and display a “Movie” component.
 
 import React from 'react';
 import Movie from './Movie';
+import NavBar from './NavBar';
 import { Card } from 'react-bootstrap';
+
 
 const MovieList = (props) => {
     return (
         <Card>
         <Card.Body>
+            <NavBar />
             {props.movies.map((movie, index) => (
             <Movie key={index} movie={movie} />
             ))}
