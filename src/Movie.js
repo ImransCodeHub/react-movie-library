@@ -6,9 +6,12 @@ rating though its ‘props’ argument.
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+const Movie = ({ movie, removeMovie }) => {
 
+  const handleRemoveClick = () => {
+    removeMovie(movie);
+  };
 
-const Movie = ({ movie }) => {
     return (
       <Container fluid>
         <Row className="movie-row">
@@ -20,6 +23,8 @@ const Movie = ({ movie }) => {
             <p><strong>Actors:</strong> {movie.actors}</p>
             <p><strong>Poster:</strong> </p>
             <img src={movie.poster} alt={movie.name} style={{ width: '100px', height: 'auto' }} />
+            {/* For each movie, add a “Remove” button. This button when pressed will remove the display of the movie. */}
+            <button onClick={handleRemoveClick}>Remove</button>
 
           </Col>
         </Row>

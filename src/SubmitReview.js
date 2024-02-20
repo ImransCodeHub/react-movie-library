@@ -1,13 +1,3 @@
-/**
- *  Each movie review should contain the following information:
--Name
--Rating
--Release Date,
--Description
--Actors,
--Image of movie poster - for image, create a drop-down list of images to choose from a list of images that you have in a json file.
- */
-
 import NavBar from "./NavBar";
 //import moviesData from './movies.json';
 import moviesReview from './moviesReview.json';
@@ -24,12 +14,10 @@ function SubmitReview() {
     const actorsRef = useRef();
     const imageRef = useRef();
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted');
         console.log(imageRef.current.value);
-        // The form when submitted will add the movie data to movies.json
 
         const newMovie = {
             name: nameRef.current.value,
@@ -39,12 +27,8 @@ function SubmitReview() {
             actors: actorsRef.current.value,
             poster: imageRef.current.value
         }
-
         moviesReview.movies.push(newMovie);
-
         console.log(moviesReview.movies);
-
-
     }
 
     return (
@@ -72,19 +56,16 @@ function SubmitReview() {
                     <label htmlFor="actors">Actors</label>
                     <input type="text" className="form-control" id="actors" ref={actorsRef} />
                 </div>
-                {/* Image of movie poster - for image, create a drop-down list of images to choose from a list of images that you have in a json file. */}
+                {/* Image of movie poster - for image, create a drop-down list of images to choose from a list of images in json file. */}
                 <div className="form-group">
                     <label htmlFor="image">Image</label>
                     <select className="form-control" id="image" ref={imageRef}>
-                {/* Poplate the image drop down from the list of images in your movieimage.json */}
-                
+                {/* Poplate the image drop down from the list of images in movieimage.json */}
                 {movieImage.movies.map((movie, index) => (
                     <option key={index} value={movie.poster}>{movie.name}</option>
                 ))}
                     </select>
                 </div>
-
-
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>

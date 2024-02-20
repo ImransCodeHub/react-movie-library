@@ -9,20 +9,29 @@ import Movie from './Movie';
 import NavBar from './NavBar';
 import { Card } from 'react-bootstrap';
 
-
 const MovieList = (props) => {
+    const removeMovie = (movieToRemove) => {
+        
+        const updatedMovies = props.movies.filter(movie => movie !== movieToRemove);
+        props.updateMovies(updatedMovies);
+
+      };
+
     return (
         <Card>
         <Card.Body>
             <NavBar />
             {props.movies.map((movie, index) => (
-            <Movie key={index} movie={movie} />
+            <Movie key={index} movie={movie} removeMovie={removeMovie}/>
             ))}
         </Card.Body>
         </Card>
     );
-    };
+};
     
+export default MovieList;
+
+// Assignment:3
 // const MovieList = (props) => {
 //   return (
 //     <div>
@@ -33,4 +42,3 @@ const MovieList = (props) => {
 //   );
 // };
 
-export default MovieList;

@@ -4,31 +4,35 @@ import MovieList from './MovieList';
 import moviesData from './movies.json';
 import moviesReview from './moviesReview.json';
 import SubmitReview from './SubmitReview';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
-  return (
 
+  const [movies, setMovies] = useState(moviesReview.movies);
+
+  const updateMovies = (updatedMovies) => {
+    setMovies(updatedMovies);
+  };
+
+  return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<NavBar/>}/>
-        <Route path='/movie-list' element={<MovieList movies={moviesReview.movies} />} />
-        <Route path='/submit-review' element={<SubmitReview/>}/>
-
-        
-
+        <Route path='/movie-list' element={<MovieList movies={movies} updateMovies={updateMovies} />} />
+        <Route path='/submit-review' element={<SubmitReview />} />
       </Routes>
     </BrowserRouter>
-    
+  );
+}
+
+export default App;
+
+
     // Assignment:3
     // <React.StrictMode>
     // <NavBar />
     // <MovieList movies={moviesData.movies} />
     // </React.StrictMode>
-  );
-}
-
-export default App;
