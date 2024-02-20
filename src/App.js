@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './NavBar';
 import MovieList from './MovieList';
 import moviesData from './movies.json';
+import moviesReview from './moviesReview.json';
 import SubmitReview from './SubmitReview';
 import React from 'react';
 
@@ -14,7 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<NavBar/>}/>
-        <Route path='/movie-list' element={<MovieList movies={moviesData.movies} />} />
+        <Route path='/movie-list' element={<MovieList movies={moviesReview.movies} />} />
         <Route path='/submit-review' element={<SubmitReview/>}/>
 
         
@@ -22,7 +23,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     
-    
+    // Assignment:3
     // <React.StrictMode>
     // <NavBar />
     // <MovieList movies={moviesData.movies} />

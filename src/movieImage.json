@@ -1,0 +1,17 @@
+
+{
+    "movies": [
+        {
+            "name": "The Massage",
+            "poster": "Movie-Images/the-massage.jpg"
+        },
+        {
+            "name": "FARHA",
+            "poster": "Movie-Images/farha.jpg"
+        },
+        {
+            "name": "Kingdom Of Heaven",
+            "poster": "Movie-Images/kingdom-of-heaven.jpg"
+        }
+    ]
+}
