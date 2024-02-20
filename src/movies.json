@@ -3,17 +3,20 @@
     {
       "name": "Terminator 2",
       "year": 1991,
-      "rating": 5
+      "rating": 5,
+      "poster": "Movie-Images/terminator-2.jpg"
     },
     {
       "name": "Avator",
       "year": 2009,
-      "rating": 4
+      "rating": 4,
+      "poster": "Movie-Images/terminator-2.jpg"
     },
     {
       "name": "Titanic",
       "year": 1997,
-      "rating": 3
+      "rating": 3,
+      "poster": "Movie-Images/terminator-2.jpg"
     }
   ]
 }

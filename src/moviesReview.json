@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "name": "Terminator 2",
+      "releaseDate": 1991,
+      "rating": 5,
+      "actors": ["Arnold Schwarzenegger", "Linda Hamilton", "Edward Furlong"],
+      "description": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her teenage son, John Connor, from a more advanced and powerful cyborg.",
+      "poster": "Movie-Images/terminator-2.jpg"
+    },
+    {
+      "name": "Avatar",
+      "releaseDate": 2009,
+      "rating": 4,
+      "actors": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+      "description": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "poster": "Movie-Images/avatar.jpg"
+    },
+    {
+      "name": "Titanic",
+      "releaseDate": 1997,
+      "rating": 4,
+      "actors": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"],
+      "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+      "poster": "Movie-Images/titanic.jpg"
+    }
+  ]
+}
