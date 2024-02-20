@@ -5,8 +5,9 @@
  */
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const NavBar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,17 +20,12 @@ const NavBar = () => {
         <nav className="navbar navbar-light bg-light">
             <div className="container">
 
-                {/* <>
-                <nav> */}
-                    <Link to="/">Home</Link>
-                    &nbsp;&nbsp;&nbsp;
-                    <Link to="/movie-list">Movie List</Link>
-                    &nbsp;&nbsp;&nbsp;
-                    <Link to="/submit-review">Submit Review</Link>
-                    &nbsp;&nbsp;&nbsp;
-                {/* </nav>
-                </> */}
-
+                <Link to="/">Home</Link>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="/movie-list">Movie List</Link>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="/submit-review">Submit Review</Link>
+                &nbsp;&nbsp;&nbsp;
                 
                 <a className="navbar-brand" href="/">Assignment 3</a>
                 <Button

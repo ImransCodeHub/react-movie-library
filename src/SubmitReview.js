@@ -2,6 +2,8 @@ import NavBar from "./NavBar";
 //import moviesData from './movies.json';
 import moviesReview from './moviesReview.json';
 import movieImage from './movieImage.json';
+import { Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import { useRef } from "react";
 
@@ -13,6 +15,7 @@ function SubmitReview() {
     const descriptionRef = useRef();
     const actorsRef = useRef();
     const imageRef = useRef();
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,30 +35,38 @@ function SubmitReview() {
     }
 
     return (
-        <div>
-            <NavBar />
-            <h1>Submit Review</h1>
+        <>
+        <NavBar />
+        <div className="d-flex justify-content-center"><h1>Submit Movie Review</h1></div>
+        <br />
+        <div className="d-flex justify-content-center">
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input type="text" className="form-control" id="name" ref={nameRef} />
                 </div>
+                <br />
                 <div className="form-group">
                     <label htmlFor="rating">Rating</label>
                     <input type="text" className="form-control" id="rating" ref={ratingRef} />
                 </div>
+                <br />
                 <div className="form-group">
                     <label htmlFor="releaseDate">Release Date</label>
                     <input type="text" className="form-control" id="releaseDate" ref={releaseDateRef} />
                 </div>
+                <br />
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
                     <input type="text" className="form-control" id="description" ref={descriptionRef} />
                 </div>
+                <br />
                 <div className="form-group">
                     <label htmlFor="actors">Actors</label>
                     <input type="text" className="form-control" id="actors" ref={actorsRef} />
                 </div>
+                <br />
                 {/* Image of movie poster - for image, create a drop-down list of images to choose from a list of images in json file. */}
                 <div className="form-group">
                     <label htmlFor="image">Image</label>
@@ -66,9 +77,11 @@ function SubmitReview() {
                 ))}
                     </select>
                 </div>
+                <br />
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
+    </>
     );
 }
 

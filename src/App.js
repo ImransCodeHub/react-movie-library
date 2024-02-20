@@ -18,6 +18,7 @@ function App() {
   };
 
   return (
+    <>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<NavBar/>}/>
@@ -25,6 +26,17 @@ function App() {
         <Route path='/submit-review' element={<SubmitReview />} />
       </Routes>
     </BrowserRouter>
+    <div className="text-center">
+      <br />
+      <br />
+      <br />
+      <br />
+      <h2>Assignment 4 - Movie Review</h2>
+      <br />
+      <br />
+
+    </div>
+    </>
   );
 }
 
