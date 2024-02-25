@@ -26,7 +26,7 @@ const Movie = ({ movie, removeMovie  }) => {
               </Card.Text>
               <Card.Text><strong>Release Date:</strong> {movie.releaseDate}</Card.Text>
               <Card.Text><strong>Description:</strong> {movie.description}</Card.Text>
-              <Card.Text><strong>Actors:</strong> {movie.actors.join(', ')}</Card.Text>
+              <Card.Text><strong>Actors:</strong> {movie.actors}</Card.Text>
               <Card.Text><strong>Poster:</strong></Card.Text>
               <Card.Img src={movie.poster} alt={movie.name} style={{ width: '100px', height: 'auto' }} />
               {/* For each movie, add a “Remove” button. This button when pressed will remove the display of the movie. */}
