@@ -1,4 +1,49 @@
 import './App.css';
+import MovieList from './MovieList';
+import SubmitReview from './SubmitReview';
+import React from 'react';
+import {useState, useEffect} from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+function App() {
+
+  const updateMovies = (updatedMovies) => {
+    setMovies(updatedMovies);
+  };
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/movieList");
+        const data = await response.json();
+        setMovies(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [updateMovies]);
+  return (
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MovieList movies={movies} updateMovies={updateMovies} />} />
+        <Route path='/submit-review' element={<SubmitReview />} />
+      </Routes>
+    </BrowserRouter>
+    </>
+  );
+}
+
+export default App;
+
+
+
+/**
+import './App.css';
 import NavBar from './NavBar';
 import MovieList from './MovieList';
 import moviesData from './movies.json';
@@ -7,7 +52,6 @@ import SubmitReview from './SubmitReview';
 import React, { useState } from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 
 function App() {
 
@@ -41,10 +85,4 @@ function App() {
 }
 
 export default App;
-
-
-    // Assignment:3
-    // <React.StrictMode>
-    // <NavBar />
-    // <MovieList movies={moviesData.movies} />
-    // </React.StrictMode>
+ */

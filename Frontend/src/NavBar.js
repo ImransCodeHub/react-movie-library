@@ -1,9 +1,32 @@
-/**
-    Create and display a react component named “NavBar”. This component should display 
-    “Assignment 3” in text, and also have a login button. When the login button is pressed it 
-    changes its text to “logout”, which when pressed will flip the text back to “login”
- */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+
+const NavBar = () => {
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <div className="container">
+
+                <Link to="/">Movie List</Link>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="/submit-review">Submit Review</Link>
+                &nbsp;&nbsp;&nbsp;
+                <a className="navbar-brand" href="/">Assignment 3</a>
+                
+            </div>
+        </nav>
+    );
+};
+
+export default NavBar;
+
+
+
+
+
+
+
+/** import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -41,20 +64,5 @@ const NavBar = () => {
     );
 };
 
-
-// const NavBar = () => {
-//   const [isLoggedIn, setIsLoggedIn] = useState(false);
-//   const handleButtonClick = () => {
-//     setIsLoggedIn(!isLoggedIn);
-//   };
-//   return (
-//     <nav>
-//       <div>
-//         <a href="/">Assignment 3</a>
-//         <button onClick={handleButtonClick}>{isLoggedIn ? 'Logout' : 'Login'}</button>
-//       </div>
-//     </nav>
-//   );
-// };
-
 export default NavBar;
+*/
