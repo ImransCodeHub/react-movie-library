@@ -1,10 +1,11 @@
 import { MongoClient, ServerApiVersion, ObjectId } from "mongodb";
-import { config as dotenvConfig } from 'dotenv';
-dotenvConfig();
 
+//import 'dotenv/config';
+
+ 
 // Replace the placeholder with your Atlas connection string
-//const uri = process.env.MONGO_URI;
-const uri = "mongodb://0.0.0.0:27017";
+const uri = process.env.MONGO_URI;
+// const uri = "mongodb://0.0.0.0:27017";
 
 
 if (!uri || !uri.startsWith('mongodb://')) {

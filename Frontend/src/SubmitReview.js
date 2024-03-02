@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import movieImage from './movieImage.json';
 import {useState, useEffect} from 'react';
 import { useRef } from "react";
 
@@ -12,7 +13,7 @@ function SubmitReview() {
     const descriptionRef = useRef();
     const actorsRef = useRef();
     const imageRef = useRef();
-    const [images, setImages] = useState([]);
+    //const [images, setImages] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,19 +46,39 @@ function SubmitReview() {
             .catch((error) => console.error(error));
     }
 
-    useEffect(() => {
-        const fetchImageData = async () => {
-            try {
-                const response = await fetch("http://localhost:8000/api/movieList");
-                const data = await response.json();
-                setImages(data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-        fetchImageData();
-    }, []);
-         
+    // useEffect(() => {
+    //     const fetchImageData = async () => {
+    //         try {
+    //             const response = await fetch("http://localhost:8000/api/movieList");
+    //             const data = await response.json();
+    //             setImages(data);
+    //         } catch (error) {
+    //             console.error("Error fetching data:", error);
+    //         }
+    //     };
+    //     fetchImageData();
+    // }, []);
+    const [file, setFile] = useState()
+
+    function handleChange(event) {
+      setFile(event.target.files[0])
+      console.log(event.target.files[0])
+    }
+
+    function handleSubmitImg(event) {
+        event.preventDefault()
+        const formData = new FormData()
+        formData.append('file', file)
+        fetch('http://localhost:8000/api/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+    }
+
     return (
         <>
         <NavBar />
@@ -96,10 +117,20 @@ function SubmitReview() {
                     <label htmlFor="image">Image</label>
 
                     <select className="form-control" id="image" ref={imageRef}>
+                        {movieImage.movies.map((movie, index) => (
+                            <option key={index} value={movie.poster}>{movie.name}</option>
+                        ))}
+                    </select>
+
+                    <h1>Image Upload</h1>
+                    <input type="file" onChange={handleChange}/>
+                    <button type="submitImg">Upload</button>
+
+                    {/* <select className="form-control" id="image" ref={imageRef}>
                             {images.map((image) => (
                                 <option key={image._id} value={image.poster}>{image.name}</option>
                             ))}
-                    </select>
+                    </select> */}
 
                 </div>
                 <br />
